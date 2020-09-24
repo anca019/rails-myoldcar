@@ -1,10 +1,10 @@
 .grid-container {
   margin-top: 56px;
-  margin-left: 64px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  padding: 80px;
-  grid-gap: 80px;
+  grid-gap: 20px;
+  padding: 16px;
+  margin-bottom: 56px;
   
 }
 
@@ -42,6 +42,18 @@
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .grid-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 900px) {
+  .grid-container {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 1500px) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }

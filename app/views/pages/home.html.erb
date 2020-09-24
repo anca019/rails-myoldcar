@@ -11,11 +11,15 @@
       <div class="card">
         <div class="front">
           <%= link_to car_path(car) do %>
-              <%= cl_image_tag car.photos.first.key, height: 200, width: 400, crop: :fill, class: "rounded" %>
+              <% car.photos.each do  |photo|%>
+                <% if photo != nil %>
+                  <%= cl_image_tag photo.key, height: 200, width: 400, crop: :fill, class: "rounded" %>
+                <% end %>
+              <% end %>
           <% end %>
         </div>      
         <div class="back">
-          <div class="back-content middle">    
+          <div class="back-content middle">
             <h2><%= car.name %></h2>
             <p><%= car.price.to_i %> EUR / day</p>
             <p><%= link_to "Details", car_path(car), class: "btn-ghost" %></p>
